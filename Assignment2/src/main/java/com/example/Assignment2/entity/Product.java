@@ -21,11 +21,11 @@ public class Product {
     private double price;
     private int rating;
 
+    @JsonIgnore
     @ManyToOne
-    @JsonManagedReference // This side is the owning side of the relationship
     private Category category;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-    @JsonBackReference
     private List<Review> reviews;
 }

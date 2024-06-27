@@ -4,12 +4,14 @@ import com.example.Assignment2.entity.Category;
 import com.example.Assignment2.entity.User;
 import com.example.Assignment2.service.CategoryService;
 import com.example.Assignment2.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/categories")
 public class CategoryController {
 
@@ -18,6 +20,7 @@ public class CategoryController {
 
     @PostMapping
     public String create(@RequestBody Category category){
+        System.out.println(category.getName());
         categoryService.create(category);
         return "Category created.";
     }

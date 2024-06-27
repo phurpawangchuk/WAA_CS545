@@ -20,8 +20,8 @@ public class Review {
 
     private String comment;
 
+    @JsonIgnore
     @ManyToOne
-    @JsonBackReference
     private Product product;
 
     @JsonIgnore

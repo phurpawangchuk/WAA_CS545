@@ -20,10 +20,11 @@ public class User {
     private String firstName;
     private String lastName;
 
-    @OneToMany(mappedBy = "user")
     @JsonIgnore
+    @OneToMany(mappedBy = "user")
     private List<Review> reviews;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Address address;
 }
